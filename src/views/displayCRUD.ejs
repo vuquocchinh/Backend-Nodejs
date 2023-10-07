@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>get CRUD</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th,
+        td {
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>Full Name</th>
+                <th>Date of Birth</th>
+                <th>Address</th>
+                <th>Gender</th>
+                <th>Role</th>
+                <th>Phone Number</th>
+            </tr>
+        </thead>
+        <% for(let i=0; i < dataTable.length; i++) { %>
+            <tr>
+                <td>
+                    <%= dataTable[i].userId %>
+                </td>
+                <td>
+                    <%= dataTable[i].email %>
+                </td>
+                <td>
+                    <%= dataTable[i].fullName %>
+                </td>
+                <td>
+                    <%= dataTable[i].dateOfBirth %>
+                </td>
+                <td>
+                    <%= dataTable[i].address %>
+                </td>
+                <td>
+                    <%= dataTable[i].phoneNumber %>
+                </td>
+            </tr>
+            <% } %>
+                <tbody>
+                    <!-- Add rows here -->
+                </tbody>
+    </table>
+</body>
+
+
+<tbody>
+    <!-- Add rows here -->
+</tbody>
+</table>
+</body>
+
+</html>
+
+</body>
+
+</html>

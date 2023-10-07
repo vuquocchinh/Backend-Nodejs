@@ -1,0 +1,121 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <title>CRUD with Nodejs</title>
+</head>
+
+<body>
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Registration Form</title>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+            integrity="sha512-5zvz5vz5vz5vz5vz5vz5vz5vz5vz5vz5vz5vz5vz5vz5vz5vz5vz5vz5vz5vz5vz5vz5vz5vz5vz5vz5vz5vz5vz5vz5vz5vz5vz5vz5vz5vz5vz5vz5vz5vz5vz"
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="card mt-5">
+                        <div class="card-header">
+                            <h4>Registration Form</h4>
+                        </div>
+                        <div class="card-body">
+                            <form action="/post-crud" method="POST">
+                                <div class="form-group mb-3">
+                                    <label for="name"><i class="fas fa-user"></i> Full Name</label>
+                                    <input type="text" class="form-control" name="fullName"
+                                        placeholder="Enter your full name">
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label for="email"><i class="fas fa-envelope"></i> Email</label>
+                                    <input type="email" class="form-control" name="email"
+                                        placeholder="Enter your email">
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label for="password"><i class="fas fa-lock"></i> Password</label>
+                                    <input type="password" class="form-control" name="password"
+                                        placeholder="Enter your password">
+                                    <div class="form-group mb-3">
+                                        <label for="dob"><i class="fas fa-calendar"></i> Date of Birth</label>
+                                        <input type="date" class="form-control" id="dob" name="dateOfBirth"
+                                            placeholder="Enter your date of birth">
+                                    </div>
+                                    <div class="form-group mb-3">
+                                        <label for="address"><i class="fas fa-map-marker-alt"></i> Address</label>
+                                        <input type="text" class="form-control" id="address" name="address"
+                                            placeholder="Enter your address">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="form-group col-md-6">
+                                                <label for="phone"><i class="fas fa-phone"></i> Phone Number</label>
+                                                <input type="tel" class="form-control" id="phone" name="phoneNumber"
+                                                    placeholder="Enter your phone number">
+                                            </div>
+                                            <div class="form-group col-md-3">
+                                                <label for="gender"><i class="fas fa-venus-mars"></i> Gender</label>
+                                                <select class="form-control" id="gender" name="gender">
+                                                    <option value="1">Male</option>
+                                                    <option value="0">Female</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="form-group col-md-3">
+                                                <label for="role"><i class="fas fa-venus-mars"></i> Role</label>
+                                                <select class="form-control" id="role" name="roleId">
+                                                    <option value="0">Admin</option>
+                                                    <option value="1">Doctor</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <button type="submit" class="btn btn-primary"><i class="fas fa-user-plus"></i>
+                                        Register</button>
+
+
+
+
+                            </form>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Latest compiled JavaScript -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+
+    </html>
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <div class="form-group">
+                    <label for="Email"></label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
