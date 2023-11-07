@@ -1,5 +1,6 @@
 import bcrypt from 'bcryptjs'; // Sử dụng bcryptjs
 import db from "../models/index";
+import e from 'express';
 
 const salt = bcrypt.genSaltSync(10);
 
@@ -53,7 +54,56 @@ let getAllUser = () => {
     })
 }
 
+let getUserinfoById = (userId) => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            let user = await db.User.findOne({
+                where: { userId: userId },
+                raw: true,
+            })
+            if (user) {
+                resolve(user);
+            }
+            else {
+                resolve([]);
+            }
+        } catch (e) {
+            reject(e);
+
+        }
+    })
+}
+let updateUserData = (data) => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            let user = await db.User.findOne({ // tìm user theo userId
+                where: { userId: data.userId } //với điều kiện userId trùng với data.userId
+            })
+            if (user) { // nếu tìm thấy user thì cập nhật lại thông tin
+                user.fullName = data.fullName;
+                user.address = data.address;
+                user.phoneNumber = data.phoneNumber;
+                user.email = data.email;
+                await user.save(); // lưu lại dữ liệu
+                let allUsers = await db.User.findAll(); // lấy lại toàn bộ dữ liệu
+                resolve(allUsers); // trả về cho client
+            } else {
+                resolve(allUsers);
+            }
+
+            await db.User.update({
+            })
+
+        } catch (e) {
+            console.log(e);
+
+        }
+    }
+    )
+}
 module.exports = {
     createNewUser: createNewUser,
     getAllUser: getAllUser,
+    getUserinfoById: getUserinfoById,
+    updateUserData: updateUserData,
 }

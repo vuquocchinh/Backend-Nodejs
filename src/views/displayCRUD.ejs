@@ -2,6 +2,10 @@
 <html lang="en">
 
 <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>get CRUD</title>
@@ -34,13 +38,12 @@
             <tr>
                 <th>ID</th>
                 <th>Email</th>
-                <th>Password</th>
                 <th>Full Name</th>
-                <th>Date of Birth</th>
-                <th>Address</th>
-                <th>Gender</th>
-                <th>Role</th>
                 <th>Phone Number</th>
+
+                <th>Address</th>
+                <th>Action</th>
+
             </tr>
         </thead>
         <% for(let i=0; i < dataTable.length; i++) { %>
@@ -52,16 +55,20 @@
                     <%= dataTable[i].email %>
                 </td>
                 <td>
-                    <%= dataTable[i].fullName %>
+                    <%= dataTable[i].fullName%>
                 </td>
                 <td>
-                    <%= dataTable[i].dateOfBirth %>
+                    <%= dataTable[i].phoneNumber %>
                 </td>
                 <td>
                     <%= dataTable[i].address %>
                 </td>
                 <td>
-                    <%= dataTable[i].phoneNumber %>
+                    <div class="btn-group" role="group" aria-label="CRUD Actions">
+                        <a href="/edit-crud?userId=<%=dataTable[i].userId %>" class="btn btn-primary">Edit</a>
+                        <button type="button" class="btn btn-danger">Delete</button>
+                    </div>
+
                 </td>
             </tr>
             <% } %>
