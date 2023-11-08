@@ -1,6 +1,7 @@
 import { json } from "body-parser";
 import db from "../models/index";
 import CRUDservice from "../services/CRUDservice";
+import e from "express";
 let getHomePage = async (req, res) => {
     try {
         let data = await db.User.findAll();
@@ -53,6 +54,18 @@ let putCRUD = async (req, res) => {
         dataTable: allUsers, // trả về cho client
     });
 }
+let deleteCRUD = async (req, res) => {
+    let userId = req.query.userId;
+    if (userId) {
+        await CRUDservice.deleteUserById(userId);
+        return res.send("delete a user successfully");
+    }
+    else {
+        return res.send("user not found");
+    }
+
+
+}
 module.exports = {
     getHomePage: getHomePage,
     getCRUD: getCRUD,
@@ -60,6 +73,5 @@ module.exports = {
     displayGetCRUD: displayGetCRUD,
     getEditCRUD: getEditCRUD,
     putCRUD: putCRUD,
-
-
+    deleteCRUD: deleteCRUD,
 }
