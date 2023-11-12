@@ -28,6 +28,7 @@ let displayGetCRUD = async (req, res) => {
     let data = await CRUDservice.getAllUser();
     console.log(data);
     return res.render("displayCRUD.ejs", {
+        dataTable: data, // trả về cho client
     });
 }
 let getEditCRUD = async (req, res) => {

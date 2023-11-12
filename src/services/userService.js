@@ -15,7 +15,7 @@ let handleUserLogin = (email, password) => {
                     if (check) {
                         userData.errCode = 0;
                         userData.errMessage = 'OK';
-                        delete user.dataValues.password;
+                        delete user.password;
                         userData.user = user;
                     }
                     else {
@@ -42,17 +42,11 @@ let handleUserLogin = (email, password) => {
         }
     });
 }
-
-
-
-
-
 let checkUserEmail = (userEmail) => {
     return new Promise(async (resolve, reject) => {
         try {
             let user = await db.User.findOne({
                 where: { email: userEmail },
-                raw: true,
             })
             if (user) {
                 resolve(true);
