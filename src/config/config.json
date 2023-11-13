@@ -5,7 +5,11 @@
     "database": "qlkb",
     "host": "127.0.0.1",
     "port": 50001,
-    "dialect": "mysql"
+    "dialect": "mysql",
+    "query": {
+      "raw": true
+    },
+    "timezone": "+07:00"
   },
   "test": {
     "username": "root",

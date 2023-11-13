@@ -9,6 +9,7 @@ let handleUserLogin = (email, password) => {
                 let user = await db.User.findOne({
                     attributes: ['email', 'roleId', 'password'],
                     where: { email: email },
+                    raw: true,
                 });
                 if (user) {
                     let check = await bcrypt.compareSync(password, user.password);
@@ -70,6 +71,38 @@ let compareUserPassword = (password, hashPasswordFromDB) => {
         }
     })
 }
+let getAllUsers = (userId) => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            let users = 'test';
+            if (userId === 'ALL') {
+                users = await db.User.findAll({
+                    attributes: {
+                        exclude: ['password']
+                    }
+
+                }); // nếu userId = ALL thì trả về tất cả user
+            }
+            if (userId && userId !== 'ALL') {
+                users = await db.User.findOne({
+                    where: { userId: userId },
+                    attributes: {
+                        exclude: ['password']
+                    }
+                    // nếu userId khác ALL thì trả về user có userId đó
+                });
+
+            }
+            resolve(users);
+
+        } catch (e) {
+            reject(e);
+
+        }
+    })
+
+}
 module.exports = {
-    handleUserLogin: handleUserLogin
+    handleUserLogin: handleUserLogin,
+    getAllUsers: getAllUsers
 }
