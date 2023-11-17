@@ -2,7 +2,6 @@ import { json } from "body-parser";
 import db from "../models/index";
 import CRUDservice from "../services/CRUDservice";
 import e from "express";
-improt CRUDservice from "../services/CRUDservice";
 let getHomePage = async (req, res) => {
     try {
         let data = await db.User.findAll();

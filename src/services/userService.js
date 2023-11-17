@@ -171,6 +171,7 @@ let deleteUser = (userId) => {
 }
 let updateUserData = (data) => {
     return new Promise(async (resolve, reject) => {
+        console.log('check data', data);
         try {
             if (!data.userId) {
                 resolve({
@@ -185,7 +186,6 @@ let updateUserData = (data) => {
             if (user) {
                 user.fullName = data.fullName;
                 user.address = data.address;
-                user.email = data.email;
                 await user.save();
                 resolve({
                     errCode: 0,
